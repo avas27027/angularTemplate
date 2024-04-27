@@ -1,0 +1,8 @@
+@use '../../../styles/' as *;
+button, a {
+    border: none;
+    background-color: rgb(var(--inputs_colors));
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+}

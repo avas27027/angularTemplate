@@ -1,0 +1,28 @@
+.landingPage{
+    .landing-header{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        img{
+            width: 50%;
+            border-radius: 5%;
+            box-shadow: 5px 0 15px;
+        }
+    }
+}
+
+#svgTitle{
+    stroke-dasharray: 1314;
+    stroke-dashoffset: 1314;
+    animation: titleAni 4s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes titleAni {
+    to{
+        stroke-dashoffset: 0;
+    }
+}

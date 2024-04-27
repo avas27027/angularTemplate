@@ -1,0 +1,56 @@
+@use "../../../styles" as *;
+
+.carousel {
+    position: relative;
+
+    &-box {
+        --cols: 3;
+        height: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        grid-auto-columns: calc((100% - 3% * (var(--cols) - 1)) / var(--cols)); //3% es el gap
+        column-gap: 3%;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+
+        @media screen and (max-width: $small) {
+            column-gap: 1%;
+            grid-auto-columns: calc((100% - 1% * (var(--cols) - 1)) / (var(--cols) - 1)); //3% es el gap
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &-button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: calc(48%);
+        z-index: 1;
+        background-color: rgb(var(--fondo_opocite));
+        opacity: 0.4;
+        color: rgb(var(--fondo));
+        border-radius: 100%;
+        padding: 1%;
+        font-size: 2em;
+        transition: 0.5s;
+
+        &[data-active="false"] {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        &.left {
+            left: 0;
+            right: unset;
+        }
+
+        &.right {
+            left: unset;
+            right: 0;
+        }
+    }
+}

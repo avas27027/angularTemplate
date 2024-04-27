@@ -1,0 +1,45 @@
+
+$theme-name: dark;
+
+$primary_color: #6889a6;
+$secondary_color: #2f6c73;
+$third_color: #aef2f2;
+$fourth_color: #0a1126;
+$fondo: #121d40;
+
+$fiveth_color: #7374d9;
+$sixth_color: #0f0f40;
+
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$xlarge: 1200px;
+
+$primary-font-family: "Lato";
+$secondary-font-family: "Comfortaa";
+$third-font-family: "RockoFLF";
+
+$themes: (
+  light: (
+    titles_colors: (105, 199, 90),
+    secondary_titles_colors: (136, 189, 85),
+    inputs_colors: (88, 176, 103),
+    text_color: (255, 255, 255),
+    secondary_text_color: (128, 128, 128),
+    fondo: (255, 255, 255),
+    fondo_opocite: (55, 73, 52),
+    remark_color: (90, 199, 139),
+    container_color: (136, 189, 85),
+  ),
+  dark: (
+    titles_colors: (105, 199, 90),
+    secondary_titles_colors: (136, 189, 85),
+    inputs_colors: (88, 176, 103),
+    text_color: (255, 255, 255),
+    secondary_text_color: (128, 128, 128),
+    fondo: (55, 73, 52),
+    fondo_opocite: (255, 255, 255),
+    remark_color: (90, 199, 139),
+    container_color: (136, 189, 85),
+  ),
+);

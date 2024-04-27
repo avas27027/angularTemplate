@@ -1,0 +1,28 @@
+@use "../../../styles" as *;
+
+.card{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    @include box-shadow-updater(sm, rgb(var(--fondo_opocite)));
+    border-radius: 1em;
+    overflow: hidden;
+    &-header{
+        flex: 1;
+        img{
+            width: 100%;
+        }
+    }
+    &-content{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 5%;
+        p{
+            text-align: center;
+        }
+    }
+}

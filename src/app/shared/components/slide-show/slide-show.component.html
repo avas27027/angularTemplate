@@ -1,0 +1,45 @@
+<div class="slideShow" [ngStyle]="{'width': styleWidth}" [style.--normalHeight]="height"
+    [style.--mediumMediaHeight]="mediumMediaHeight" [style.--smallMediaHeight]="smallMediaHeight">
+    <button #buttons class="left" data-active="true" (click)="onClickL()">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button #buttons class="right" data-active="true" (click)="onClickR()">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
+    <div #slide1 [ngClass]="'slideShow-slide '+ direction" [style.--behavour]="behavour"
+        [style.--v]="aniVelocity + 'ms'" [style.--spaceB]="spaceB+'%'" data-active="true">
+        @if(active){
+        <div style="width: 100%; height: 90%; display: flex;">
+            <img src="{{slidesArr[curr].url}}" width="100%" style="object-fit: cover;" alt="img1">
+        </div>
+        }
+        @else{
+        <div style="width: 100%; height: 90%; display: flex;">
+            <img src="{{slidesArr[last].url}}" width="100%" style="object-fit: cover;" alt="img2">
+        </div>
+        }
+    </div>
+    <div #slide2 [ngClass]="'slideShow-slide '+ direction" [style.--behavour]="behavour"
+        [style.--v]="aniVelocity + 'ms'" [style.--spaceB]="spaceB+'%'" data-active="false">
+        @if(!active){
+        <div style="width: 100%; height: 90%; display: flex;">
+            <img src="{{slidesArr[curr].url}}" width="100%" style="object-fit: cover;" alt="img1">
+        </div>
+        }
+        @else{
+        <div style="width: 100%; height: 90%; display: flex;">
+            <img src="{{slidesArr[last].url}}" width="100%" style="object-fit: cover;" alt="img2">
+        </div>
+        }
+    </div>
+    <div #legend class="slideShow-legend" [style.--slides]="slidesArr.length" data-active="true">
+        @for(e of slidesArr; track e.id; let first = $first; let index = $index){
+        @if(first){
+        <span #legendDot data-active="true" (click)="legendHandler(index)"></span>
+        }
+        @else{
+        <span #legendDot data-active="false" (click)="legendHandler(index)"></span>
+        }
+        }
+    </div>
+</div>

@@ -1,0 +1,34 @@
+@use "./variables.scss" as *;
+@use "./fonts.scss" as *;
+
+@mixin box-shadow-updater($size, $color,$type:"") {
+  @if $type == uniform{
+    @if $size == sm {
+      box-shadow: 0 0px 10px -5px $color;
+    }@else if $size == mm {
+      box-shadow: 0 0px 10px 0px $color;
+    }@else{
+      box-shadow: 0 0px 10px -5px $color;
+    }
+  }
+  @else{
+    @if $size == sm {
+      box-shadow: 0 3px 10px -5px $color;
+    }@else if $size == mm {
+      box-shadow: 0 5px 10px 0px $color;
+    }@else{
+      box-shadow: 0 3px 10px -5px $color;
+    }
+  }
+}
+
+@mixin theme-updater() {
+  @each $name, $theme-name in $themes {
+    .theme-#{$name} & {
+      @each $color-name, $color in $theme-name {
+        #{'--'+$color-name}: $color;
+      }
+    }
+  }
+}
+

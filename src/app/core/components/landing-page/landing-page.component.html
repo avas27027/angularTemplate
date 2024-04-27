@@ -1,0 +1,20 @@
+<div class="landingPage">
+    
+    <div class="landing-header">
+        <h1>Landing Header</h1>
+        <img src="https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQOO0X7mMnoYz-e9Zdc6Pe6Wz7Ow1DcvhEiaex5aSv6QJDoCtcooqA7UUbjrphvjlIc"
+            alt="Header-picture">
+        <p>Landing Header Description</p>
+        <app-shared-button title="hola mundo" link="#"></app-shared-button>
+
+    </div>
+    <app-accordion [arrIn]="accordionTest"></app-accordion>
+    <app-generic-card title="primera card" desc="esta es una card" button="presioname" width="20%"
+        img='https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQOO0X7mMnoYz-e9Zdc6Pe6Wz7Ow1DcvhEiaex5aSv6QJDoCtcooqA7UUbjrphvjlIc '></app-generic-card>
+    <app-carousel [arr]="carouselTest" [columns]="3"></app-carousel>
+    <app-slide-show [behavour]="'linear'" [aniVelocity]="1000" [styleWidth]="'90vw'" [height]="'50vh'"
+        [slidesArr]="slideArr"></app-slide-show>
+    <app-double-range-slider [max]="1000" [min]="100" [step]="25"
+        [dispach]="doubleSliderHandler"></app-double-range-slider>
+    
+</div>

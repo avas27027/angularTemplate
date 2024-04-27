@@ -1,0 +1,12 @@
+<div class="carousel">
+    <div #box class="carousel-box" [style.--cols]="columns" (scroll)="onScrollHandler()">
+        @for(e of arr; track e.id; let first = $first){
+        <div #slide className="carousel-slide">
+            <app-generic-card img={{e.img}} title={{e.title}} desc={{e.desc}} button={{e.button}}></app-generic-card>
+        </div>
+        }
+        
+    </div>
+    <div #leftBut class="carousel-button left" (click)="leftClick()" data-active="false"><mat-icon>chevron_left</mat-icon></div>
+    <div #rightBut class="carousel-button right" (click)="rightClick()" data-active="true"><mat-icon>chevron_right</mat-icon></div>
+</div>

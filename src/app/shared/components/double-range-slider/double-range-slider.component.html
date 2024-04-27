@@ -1,0 +1,10 @@
+<div class='doubleRangeSlider'>
+    <label #fromLabel class='fromLabel' htmlFor="range-1">{{fromValue}}</label>
+    <input #fromSlider class='fromRange' type="range" name="range-1" [(ngModel)]="fromValue"
+        (mouseup)="dispach({from:fromValue, to:toValue})" (input)="sliderChangeHanlder('left')" id="r-1" [min]="min"
+        [max]="max" [step]="step" />
+    <input #toSlider class='toRange' type="range" name="range-2" [(ngModel)]="toValue"
+        (mouseup)="dispach({from:fromValue, to:toValue})" (input)="sliderChangeHanlder('right')" id="r-2" [min]="min"
+        [max]="max" [step]="step" />
+    <label #toLabel class='toLabel' htmlFor="range-2">{{toValue}}</label>
+</div>

@@ -1,0 +1,14 @@
+<div class="accordion-group">
+    @for(e of arrIn; track e.id; let first = $first){
+    <div [ngClass]="[first? 'accordion first': 'accordion']" (click)="onClickHandler(e.id)">
+        <div #head class="accordion-header hide" hide="true">
+            <mat-icon class="acc-icon">close</mat-icon>
+            <div class="acc-icon"></div>
+            <h3>{{e.title}}</h3>
+        </div>
+        <div #desc class="accordion-desc hide" hide="true">
+            <p>{{e.desc}}</p>
+        </div>
+    </div>
+    }
+</div>

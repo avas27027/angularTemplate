@@ -1,0 +1,70 @@
+@use "../../../styles" as *;
+
+.accordion-group {
+    width: 100%;
+    background-color: rgb(var(--container_color), .1);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3%;
+
+    .accordion {
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+
+        &.first {
+            border: 0px;
+        }
+
+        h3 {
+            padding: 15px 0;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &.hide {
+                .acc-icon {
+                    rotate: 45deg;
+                }
+            }
+
+            .acc-icon {
+                transition: .5s;
+                width: 20px;
+                rotate: 0deg;
+                font-size: 1.3em;
+                color: rgb(var(--titles_colors));
+            }
+
+            h3 {
+                padding-left: 5px;
+            }
+        }
+
+        &-desc {
+            transition: .5s;
+            padding-bottom: 15px;
+            padding-left: 25px;
+
+            &.hide {
+                height: 0;
+                padding: 0;
+                padding-left: 20px;
+
+                p {
+                    transition: .5s;
+                    opacity: 0;
+                    overflow: hidden;
+                }
+            }
+
+            p {
+                transition: .5s;
+                height: 100%;
+
+            }
+        }
+    }
+}
