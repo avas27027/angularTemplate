@@ -1,1 +1,9 @@
-<p>counters works!</p>
+<div class="counter box">
+    @for (e of counters; track i; let i = $index) {
+    <div class="counter element">
+        <p class="counter element-name">{{e.name}}</p>
+        <h1 #counterElement class="counter element-number">{{e.start}}</h1>
+        <p class="counter element-description">{{e.desc}}</p>
+    </div>
+    }
+</div>

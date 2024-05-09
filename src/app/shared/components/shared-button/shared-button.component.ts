@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
+/**
+ * **title** - *string*
+ * 
+ * link - *string*
+ */
 @Component({
   selector: 'app-shared-button',
   standalone: true,
