@@ -15,6 +15,7 @@
     <app-slide-show [behavour]="'linear'" [aniVelocity]="500" [styleWidth]="'100vw'" [height]="'50vh'"
     [slidesArr]="slideArr"></app-slide-show>
     <app-counters [counters]="[{start:0, end:1000, name:'Likes', desc:'aqui va una corta descripcion de los likes'},{start:0, end:1000, name:'Clientes',desc:'aqui va una corta descripcion de clientes'}, {start:0, end:1000, name:'Reseñas Positivas',desc:'aqui va una corta descripcion de reseñas'}]"></app-counters>
+    <app-regresive-count [title]="'Solo quedan!!!'" [targetDate]="targetDate"></app-regresive-count>
     <app-double-range-slider [max]="1000" [min]="100" [step]="25"
         [dispach]="doubleSliderHandler"></app-double-range-slider>
 </div>

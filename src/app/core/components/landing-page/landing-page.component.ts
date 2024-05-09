@@ -9,12 +9,13 @@ import { SlideShowComponent } from '../../../shared/components/slide-show/slide-
 import { DoubleRangeSliderComponent } from '../../../shared/components/double-range-slider/double-range-slider.component';
 import { Application } from '@splinetool/runtime';
 import { CountersComponent } from '../../../shared/components/counters/counters.component';
+import { RegresiveCountComponent } from '../../../shared/components/regresive-count/regresive-count.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
   imports: [CommonModule, RouterOutlet, SharedButtonComponent, AccordionComponent, CarouselComponent,
-    GenericCardComponent, SlideShowComponent, DoubleRangeSliderComponent, CountersComponent],
+    GenericCardComponent, SlideShowComponent, DoubleRangeSliderComponent, CountersComponent, RegresiveCountComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -64,4 +65,5 @@ export class LandingPageComponent implements OnInit{
   doubleSliderHandler(response: any) {
     console.log(response)
   }
+  targetDate = new Date(2024, 5, 21)
 }
