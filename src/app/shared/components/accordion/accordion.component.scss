@@ -2,7 +2,7 @@
 
 .accordion-group {
     width: 100%;
-    background-color: rgb(var(--container_color), .1);
+    background-color: rgb(var(--container_color));
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
                 width: 20px;
                 rotate: 0deg;
                 font-size: 1.3em;
-                color: rgb(var(--titles_colors));
+                color: rgb(var(--remark_color));
             }
 
             h3 {

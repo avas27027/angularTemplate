@@ -1,4 +1,3 @@
-
 $theme-name: dark;
 
 $primary_color: #6889a6;
@@ -20,26 +19,24 @@ $secondary-font-family: "Comfortaa";
 $third-font-family: "RockoFLF";
 
 $themes: (
-  light: (
-    titles_colors: (105, 199, 90),
-    secondary_titles_colors: (136, 189, 85),
+  light: (primary_color: (31, 255, 34),
+    secondary_color: (0, 0, 0),
     inputs_colors: (88, 176, 103),
-    text_color: (255, 255, 255),
+    text_color: (0, 0, 0),
     secondary_text_color: (128, 128, 128),
-    fondo: (255, 255, 255),
-    fondo_opocite: (55, 73, 52),
-    remark_color: (90, 199, 139),
-    container_color: (136, 189, 85),
+    background_color: (255, 255, 255),
+    background_opocite_color: (55, 73, 52),
+    remark_color: (181, 222, 0),
+    container_color: (178, 178, 178),
   ),
-  dark: (
-    titles_colors: (105, 199, 90),
-    secondary_titles_colors: (136, 189, 85),
+  dark: (primary_color: (31, 255, 34),
+    secondary_color: (255, 255, 255),
     inputs_colors: (88, 176, 103),
     text_color: (255, 255, 255),
     secondary_text_color: (128, 128, 128),
-    fondo: (55, 73, 52),
-    fondo_opocite: (255, 255, 255),
-    remark_color: (90, 199, 139),
-    container_color: (136, 189, 85),
+    background_color: (0, 0, 0),
+    background_opocite_color: (255, 255, 255),
+    remark_color: (181, 222, 0),
+    container_color: (77, 76, 76),
   ),
 );

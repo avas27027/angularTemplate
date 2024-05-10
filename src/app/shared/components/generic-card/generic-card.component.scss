@@ -4,7 +4,7 @@
     margin: 15px;
     display: flex;
     flex-direction: column;
-    @include box-shadow-updater(sm, rgb(var(--fondo_opocite)));
+    @include box-shadow-updater(sm, rgb(var(--background_opocite_color)));
     border-radius: 1em;
     overflow: hidden;
     &-header{

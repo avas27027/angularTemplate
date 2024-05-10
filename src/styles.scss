@@ -3,7 +3,7 @@
 
 body {
     @include theme-updater();
-    background-color: rgb(var(--fondo));
+    background-color: rgb(var(--background_color));
 }
 
 * {
@@ -102,7 +102,7 @@ $type: "text", "email", "password";
 
 h1,
 h2 {
-    color: rgb(var(--titles_colors));
+    color: rgb(var(--primary_color));
     font-family: $secondary-font-family;
     font-weight: 700;
 }
@@ -110,13 +110,13 @@ h2 {
 h3,
 h4,
 h5 {
-    color: rgb(var(--secondary_titles_colors));
+    color: rgb(var(--secondary_color));
     font-family: $secondary-font-family;
     font-weight: 300;
 }
 
 p {
-    color: rgb(var(--secondary_text_color));
+    color: rgb(var(--text_color));
 }
 
 b {
@@ -129,5 +129,5 @@ u {
 }
 
 label {
-    color: rgb(var(--secondary_text_color));
+    color: rgb(var(--text_color));
 }

@@ -26,5 +26,8 @@
         grid-column-gap: 10px;
         font-size: 2em;
         text-align: center;
+        p{
+            color: rgb(var(--remark_color));
+        }
     }
 }

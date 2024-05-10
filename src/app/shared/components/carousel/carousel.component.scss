@@ -30,9 +30,9 @@
         position: absolute;
         top: calc(48%);
         z-index: 1;
-        background-color: rgb(var(--fondo_opocite));
+        background-color: rgb(var(--background_opocite_color));
         opacity: 0.4;
-        color: rgb(var(--fondo));
+        color: rgb(var(--background_color));
         border-radius: 100%;
         padding: 1%;
         font-size: 2em;

@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 
 export const routes: Routes = [
     {
-        path: "landing",
+        path: "",
         component: LandingPageComponent,
         children: [
             { path: "", component: LandingPageComponent },
