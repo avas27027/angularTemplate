@@ -10,12 +10,12 @@
         [style.--v]="aniVelocity + 'ms'" [style.--spaceB]="spaceB+'%'" data-active="true">
         @if(active){
         <div style="width: 100%; height: 90%; display: flex;">
-            <img src="{{slidesArr[curr].url}}" width="100%" style="object-fit: cover;" alt="img1">
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[curr]"></ng-container>
         </div>
         }
         @else{
         <div style="width: 100%; height: 90%; display: flex;">
-            <img src="{{slidesArr[last].url}}" width="100%" style="object-fit: cover;" alt="img2">
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[last]"></ng-container>
         </div>
         }
     </div>
@@ -23,17 +23,17 @@
         [style.--v]="aniVelocity + 'ms'" [style.--spaceB]="spaceB+'%'" data-active="false">
         @if(!active){
         <div style="width: 100%; height: 90%; display: flex;">
-            <img src="{{slidesArr[curr].url}}" width="100%" style="object-fit: cover;" alt="img1">
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[curr]"></ng-container>
         </div>
         }
         @else{
         <div style="width: 100%; height: 90%; display: flex;">
-            <img src="{{slidesArr[last].url}}" width="100%" style="object-fit: cover;" alt="img2">
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[last]"></ng-container>
         </div>
         }
     </div>
-    <div #legend class="slideShow-legend" [style.--slides]="slidesArr.length" data-active="true">
-        @for(e of slidesArr; track e.id; let first = $first; let index = $index){
+    <div #legend class="slideShow-legend" [style.--slides]="itemsTemplate.length" data-active="true">
+        @for(e of itemsTemplate; track index; let first = $first; let index = $index){
         @if(first){
         <span #legendDot data-active="true" (click)="legendHandler(index)"></span>
         }

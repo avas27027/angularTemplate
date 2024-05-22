@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, ElementRef, Input, OnInit, QueryList, Renderer2, TemplateRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 /** 
- * **slidesArr** - *[id:number, url: string]*
- * 
  * **aniVelocity** - *number*
  * 
  * **styleWidth** - *string*
@@ -32,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './slide-show.component.html',
   styleUrl: './slide-show.component.scss'
 })
-export class SlideShowComponent implements OnInit {
+export class SlideShowComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) { }
 
   private _curr = 0;
@@ -43,7 +41,6 @@ export class SlideShowComponent implements OnInit {
   @Input() legend = true
   @Input() buttons = true
   @Input() spaceB = 0
-  @Input({ required: true }) slidesArr!: { "id": number, "url": string }[]
   @Input() interval?: number
   @Input({ required: true }) aniVelocity!: number
   @Input() behavour?: "linear" | "ease";
@@ -52,9 +49,11 @@ export class SlideShowComponent implements OnInit {
   @Input() mediumMediaHeight?: string
   @Input() smallMediaHeight?: string
 
+  @ContentChildren("template") itemsTemplate!: QueryList<TemplateRef<any>>
+
   @ViewChild("legend") legendRef!: ElementRef
   @ViewChildren("legendDot") legendDotRef!: QueryList<ElementRef>
-  @ViewChild("buttons") buttonsRef!: ElementRef
+  @ViewChildren("buttons") buttonsRef!: QueryList<ElementRef>
   @ViewChild("slide1") slideRef1!: ElementRef
   @ViewChild("slide2") slideRef2!: ElementRef
 
@@ -69,11 +68,10 @@ export class SlideShowComponent implements OnInit {
   }
   public set curr(value) {
     this.active = !this.active
-    console.log(this.active)
     this.renderer.setAttribute(this.slideRef1.nativeElement, "data-active", String(this.active))
     this.renderer.setAttribute(this.slideRef2.nativeElement, "data-active", String(!this.active))
-    if (value === this.slidesArr.length) this._curr = 0;
-    else if (value === -1) this._curr = this.slidesArr.length - 1;
+    if (value === this.itemsTemplate.length) this._curr = 0;
+    else if (value === -1) this._curr = this.itemsTemplate.length - 1;
     else this._curr = value;
     this.legendDotRef.toArray().forEach((e, i) => {
       if (i === this.curr) {
@@ -85,12 +83,12 @@ export class SlideShowComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     if (!this.legend) {
       this.renderer.setAttribute(this.legendRef.nativeElement, "data-active", "false")
     }
     if (!this.buttons) {
-      this.renderer.setAttribute(this.buttonsRef.nativeElement, "data-active", "false")
+      this.buttonsRef.forEach((item:ElementRef)=>{this.renderer.setAttribute(item.nativeElement, "data-active", "false")})
     }
     if (this.interval != undefined) {
       setInterval(() => {
