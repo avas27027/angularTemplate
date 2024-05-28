@@ -1,0 +1,34 @@
+<div class="slideShowLeft" [ngStyle]="{'width': styleWidth}" [style.--normalHeight]="height"
+[style.--mediumMediaHeight]="mediumMediaHeight" [style.--smallMediaHeight]="smallMediaHeight">
+    <div #legend class="slideShowLeft-legend" [style.--slides]="itemsTemplate.length" data-active="true">
+        <p #legendDot (click)="legendHandler(0)" data-active="true">Carta</p>
+        <p #legendDot (click)="legendHandler(1)">Promos</p>
+    </div>
+    <div class="slideShowLeft-box" >
+        <button #buttons class="left" data-active="true" (click)="onClickL()">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button #buttons class="right" data-active="true" (click)="onClickR()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+        <div #slide1 [ngClass]="'slideShowLeft-slide '+ direction" [style.--behavour]="behavour"
+            [style.--v]="aniVelocity + 'ms'" [style.--spaceB]="spaceB+'%'" data-active="true">
+            @if(active){
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[curr]"></ng-container>
+            }
+            @else{
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[last]"></ng-container>
+            }
+        </div>
+        <div #slide2 [ngClass]="'slideShowLeft-slide '+ direction" [style.--behavour]="behavour"
+            [style.--v]="aniVelocity + 'ms'" [style.--spaceB]="spaceB+'%'" data-active="false">
+            @if(!active){
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[curr]"></ng-container>
+            }
+            @else{
+            <ng-container [ngTemplateOutlet]="itemsTemplate.toArray()[last]"></ng-container>
+            }
+        </div>
+        
+    </div>
+</div>

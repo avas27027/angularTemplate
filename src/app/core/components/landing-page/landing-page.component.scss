@@ -1,3 +1,4 @@
+@use "../../../styles" as *;
 .landingPage{
     .landing-header{
         height: 100vh;
@@ -11,6 +12,17 @@
             border-radius: 5%;
             box-shadow: 5px 0 15px;
         }
+    }
+}
+.promos {
+    &-cards {
+        @media screen and (max-width: $small) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
