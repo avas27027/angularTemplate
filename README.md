@@ -4,13 +4,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Some useful pages
 
-[My Atlist](https://my.atlist.com/map/ea593591-de3c-4a07-be50-bd4c47eb8294): To create fancy maps. \
+[My Atlist](https://my.atlist.com/map/ea593591-de3c-4a07-be50-bd4c47eb8294): To create fancy maps `Pay $24`. \
 [CSS Gradients](https://cssgradient.io/): To generate background with some fade. \
 [What the Font](https://www.myfonts.com/pages/whatthefont): To search and specific font with a picture. \
 [Elfsight](https://dash.elfsight.com/apps/countdown-timer?installTab=website): PreMade sections implemented in Iframes `Pay $60`. \
 [SVGator](https://app.svgator.com/auth/login?url=%2Feditor#/): Animate SVG `Pay $240`. \
 [Spline](https://app.spline.design/): 3D desinging. \
-[Miro](https://miro.com/app/board/uXjVKQvZcOY=/): Boards for organization.
+[Miro](https://miro.com/app/board/uXjVKQvZcOY=/): Boards for organization.\
+[FontJoy](https://fontjoy.com/): Find some fonts\
+[RealTimeColors](https://www.realtimecolors.com/): Look Colors on a webpage\
+[BannerBoo](https://svganimator.bannerboo.com/): Animate SVG `Free`
 
 ## Development server
 
