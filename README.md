@@ -13,7 +13,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [Miro](https://miro.com/app/board/uXjVKQvZcOY=/): Boards for organization.\
 [FontJoy](https://fontjoy.com/): Find some fonts\
 [RealTimeColors](https://www.realtimecolors.com/): Look Colors on a webpage\
-[BannerBoo](https://svganimator.bannerboo.com/): Animate SVG `Free`
+[BannerBoo](https://svganimator.bannerboo.com/): Animate SVG `Free`\
+[Recraft](https://app.recraft.ai/): Create SVG with AI\
+[Boxy-SVG](https://boxy-svg.com/): Convert fonts into SVG
 
 ## Development server
 
